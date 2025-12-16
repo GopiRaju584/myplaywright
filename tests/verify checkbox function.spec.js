@@ -7,6 +7,7 @@ test('verify checkbox function',  async ({page}) =>{
     await page.goto(URL);
 
     const CheckBox1= page.locator('input[id="checkBoxOption1"]');
+    await page.waitForTimeout(6000);
 
     await CheckBox1.click();
 

@@ -7,7 +7,7 @@ test('verify Sign In functionality', async ({page}) =>{
 
     let pageTile = await page.title();
 
-    await expect(pageTile).toBe('PROPLE - HRMS');
+    await expect(pageTile).toBe('prople - hrms');
 
     let urtlOfThepage = page.url();
     await expect(URL).toBe(urtlOfThepage);
