@@ -1,8 +1,8 @@
 import { test,expect } from '@playwright/test';
 
 test('verify checkbox function',  async ({page}) =>{
-
-    let URL='https://rahulshettyacademy.com/AutomationPractice/';
+try{
+    let URL='https://rahulshettyacademy.';
 
     await page.goto(URL);
 
@@ -12,4 +12,13 @@ test('verify checkbox function',  async ({page}) =>{
     await CheckBox1.click();
 
     await expect(CheckBox1).toBeChecked();
+}catch(error){
+    console.error('an error occure:',error);
+}
+finally{
+await console.log('Next step after the checkbox is checked');
+
+let name = "hello world";
+await console.log(name);
+}
 });
