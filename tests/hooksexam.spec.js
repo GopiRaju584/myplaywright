@@ -1,0 +1,41 @@
+import {test,expect} from '@playwright/test';
+
+test.describe('all my test', () =>{
+
+
+
+test.beforeEach( async ({page}) => {
+    await page.goto('https://www.saucedemo.com/');
+
+
+    await page.locator('[id="user-name"]').fill('standard_user');
+    await page.locator('[id="password"]').fill('secret_sauce');
+    await page.locator('[name="login-button"]').click();
+    await page.waitForURL('https://www.saucedemo.com/inventory.html');
+});
+test.afterEach(async ({page}) =>{
+    await page.close();
+
+});
+
+test('homepage', async ({page}) =>{
+  
+    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+    await page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
+    await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    await page.locator('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
+    await page.waitForURL('https://www.saucedemo.com/inventory.html');
+
+});
+
+test('logout',async ({page}) =>{
+ 
+    await page.getByRole('button', { name: 'Open Menu' }).click();
+    await page.locator('[data-test="logout-sidebar-link"]').click();
+    await page.waitForURL('https://www.saucedemo.com/');
+
+
+
+});
+
+});
