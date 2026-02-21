@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-test.only ('test login functionality', async({page})=>{
+test('test login functionality', async({page})=>{
     await page.goto('https://www.agoda.com/?ds=nGcW3G45QHuiOPhQ');
     await page.locator('//input[@aria-label="Enter a destination or property"]').fill('hyderabad');
     await page.locator('//div[@data-selenium="checkInText"]').click();
@@ -13,4 +13,4 @@ test.only ('test login functionality', async({page})=>{
     
 });
 
-    
+

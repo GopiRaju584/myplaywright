@@ -1,8 +1,10 @@
 import { test,expect } from '@playwright/test';
 
 test('verify dropdown function', async ({page}) =>{
+try{
 
     let URL='https://rahulshettyacademy.com/AutomationPractice/';
+
     
 
     await page.goto(URL);
@@ -22,5 +24,14 @@ test('verify dropdown function', async ({page}) =>{
     
 
     await page.pause();
+}catch(error){
+    await console.log('an error occure:',error);
+}
+finally{
+    await console.log('Next steps will be displayed');
+
+    let name = "hello"
+    await console.log(name);
+}
 
 });

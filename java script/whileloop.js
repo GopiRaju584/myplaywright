@@ -1,6 +1,6 @@
-1.10
+1.100
 let i=1;
-while(i<=10){
+while(i<=100){
     console.log(i);
     i++;
 }

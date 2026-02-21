@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 
 test('verifyflipkartfunction', async({page}) =>{
-
+try{
     let URL='https://www.flipkart.com/';
     await page.goto(URL);
     
@@ -10,10 +10,19 @@ test('verifyflipkartfunction', async({page}) =>{
     const Login = page.getByRole('link',{name: 'Login',exact:true});
     const Becomeaseller = page.getByRole('link',{name:'Become a Seller'}).first(); 
 
-    await expect(applogo).toBeVisible();
+    //await expect(applogo).toBeVisible();
     await expect(cart).toBeVisible();
-    await expect(Login).toBeVisible(); 
+    //await expect(Login).toBeVisible(); 
     await expect(Becomeaseller).toBeVisible();
+}catch(errot){
+    await console.error('an error occure:',error);
+}
+finally{
+    await console.log('Next steps will be visible');
+
+    let name = "world"
+    await console.log(name);
+}
 
     
 

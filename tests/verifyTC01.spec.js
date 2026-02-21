@@ -1,6 +1,9 @@
 import{test,expect } from '@playwright/test';
 
+
+
 test('test', async ({ page }) => {
+
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
   await page.getByRole('textbox', { name: 'Username:' }).click();
   await page.getByRole('textbox', {name:"Username"}).fill("Praveentest");
